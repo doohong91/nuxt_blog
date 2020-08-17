@@ -1,0 +1,77 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  * {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  margin: 0;
+  font: 1.4rem/1.5 'Noto Sans KR', sans-serif;
+}
+
+.container {
+  width: 85vw;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+
+.layout-enter,
+.layout-leave-to {
+  opacity: 0;
+}
+
+/* 페이지 진입, 진출 중인 상태일 때 */
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+
+/* 페이지 진입 전, 진출 후 상태일 때 */
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes bounce-out {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+
+/* transition-name: 'service' */
+.services-enter-active {
+  animation: slide-left-in .3s;
+}
+.services-leave-active {
+  animation: slide-right-out .3s;
+}
+
+/* service 에서 사용하는 애니메이션 정의 */
+@keyframes slide-left-in {
+  0% { transform: translateX(-20vw); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes slide-right-out {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(20vw); opacity: 0; }
+}
